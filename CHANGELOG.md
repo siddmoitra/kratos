@@ -5,7 +5,7 @@
 
 **Table of Contents**
 
-- [ (2023-11-14)](#2023-11-14)
+- [ (2023-12-11)](#2023-12-11)
   - [Breaking Changes](#breaking-changes)
     - [Bug Fixes](#bug-fixes)
     - [Documentation](#documentation)
@@ -314,7 +314,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# [](https://github.com/ory/kratos/compare/v1.0.0...v) (2023-11-14)
+# [](https://github.com/ory/kratos/compare/v1.0.0...v) (2023-12-11)
 
 ## Breaking Changes
 
@@ -439,6 +439,9 @@ https://github.com/ory/kratos/pull/3480
 - Do not initialize parts of the registry in parallel
   ([#3534](https://github.com/ory/kratos/issues/3534))
   ([ff177db](https://github.com/ory/kratos/commit/ff177db8a97f27abc3e883e79832685348602334))
+- Don't list org SSOs in settings
+  ([#3637](https://github.com/ory/kratos/issues/3637))
+  ([6c7068c](https://github.com/ory/kratos/commit/6c7068cf41df51cde5fe9fc79cca84ec6124d38a))
 - Don't require session for OIDC verification
   ([#3443](https://github.com/ory/kratos/issues/3443))
   ([e08f831](https://github.com/ory/kratos/commit/e08f831c2715e515bf58dc2dbb47fc3576421a5c))
@@ -462,12 +465,25 @@ https://github.com/ory/kratos/pull/3480
   Adds correct pagination parameters to the SDK methods for listing identities
   and sessions.
 
+- Ignore CSRF middleware on Apple OIDC callback
+  ([309c506](https://github.com/ory/kratos/commit/309c50694c11162cad070337f9b1d4e0fcdf444b))
 - Ignore more cloudflare cookies
   ([#3499](https://github.com/ory/kratos/issues/3499))
   ([f124ab5](https://github.com/ory/kratos/commit/f124ab5586781cdbfc0a0cfd11b4355bfc8a115c))
+- Improved SSRF protection ([#3629](https://github.com/ory/kratos/issues/3629))
+  ([6d08576](https://github.com/ory/kratos/commit/6d08576bbc2c06014192f05e0129b95eb6c9fd80)):
+
+  This also improves tracing in the OIDC strategy.
+
+- Incorrect login accept challenge
+  ([#3658](https://github.com/ory/kratos/issues/3658))
+  ([b5dede3](https://github.com/ory/kratos/commit/b5dede329247d0962688b15872a6caf027cf910f))
 - Incorrect sdk generator path
   ([#3488](https://github.com/ory/kratos/issues/3488))
   ([ed996c0](https://github.com/ory/kratos/commit/ed996c0d25e68e8a2c7de861c546f0b0e42e9e6e))
+- Incorrect SMTP error handling
+  ([#3636](https://github.com/ory/kratos/issues/3636))
+  ([ee138ec](https://github.com/ory/kratos/commit/ee138ec4e1ba55ef077858653220db9e6b0c7254))
 - Increase connection-level timeouts and shutdown timeouts
   ([#3570](https://github.com/ory/kratos/issues/3570))
   ([200b413](https://github.com/ory/kratos/commit/200b4138a429d113ee045d16031bb0a6312c1c01)):
@@ -522,6 +538,8 @@ https://github.com/ory/kratos/pull/3480
 
   - chore: refactor
 
+- Panic in recovery ([#3639](https://github.com/ory/kratos/issues/3639))
+  ([c25ddff](https://github.com/ory/kratos/commit/c25ddffd2270a8d0861e2fc78cd0ba26e63af4eb))
 - Pass context ([#3452](https://github.com/ory/kratos/issues/3452))
   ([c492bdc](https://github.com/ory/kratos/commit/c492bdcd0c5dbdf527ae523d879a6c1eeb9c4cdf))
 - Properly normalize OIDC verified emails
@@ -573,6 +591,8 @@ https://github.com/ory/kratos/pull/3480
 - Registration with verification
   ([#3451](https://github.com/ory/kratos/issues/3451))
   ([77c3196](https://github.com/ory/kratos/commit/77c3196fd60c5927b84e9a7f6546f80ac2d78ee5))
+- Reject obviously invalid email addresses from courier
+  ([8cb9e4c](https://github.com/ory/kratos/commit/8cb9e4cae9dffd4c25d52920186f9c5fbe2bd0fe))
 - Remove `earliest_possible_extend` default in schema
   ([#3464](https://github.com/ory/kratos/issues/3464))
   ([7e05b7d](https://github.com/ory/kratos/commit/7e05b7db3c01efc96185ac18042e971e33da37c8))
@@ -635,6 +655,9 @@ https://github.com/ory/kratos/pull/3480
 
   - test: update snapshot
 
+- Use ID label on login with multiple identifiers
+  ([#3657](https://github.com/ory/kratos/issues/3657))
+  ([be907db](https://github.com/ory/kratos/commit/be907dbbd841025fd854344b77d3368b2ff8089f))
 - Use org ID from session if available in login flow
   ([#3545](https://github.com/ory/kratos/issues/3545))
   ([1b3647c](https://github.com/ory/kratos/commit/1b3647c2acdad966f920c2b9e6e657c52aa50c6e))
@@ -689,6 +712,9 @@ https://github.com/ory/kratos/pull/3480
 - Add OpenTelemetry span for password hash comparison
   ([#3383](https://github.com/ory/kratos/issues/3383))
   ([e3fcf0c](https://github.com/ory/kratos/commit/e3fcf0c31db9742ed61bcf783e37ee119ed19d42))
+- Add support for recovery on native flows
+  ([#3273](https://github.com/ory/kratos/issues/3273))
+  ([e363889](https://github.com/ory/kratos/commit/e363889732c0a1cb801fd12b2e0e8546006e9714))
 - Add WebhookSucceeded event
   ([aa8c936](https://github.com/ory/kratos/commit/aa8c93677a8f682f7693afe69f1baf1887355e0a))
 - Added various new text messages
@@ -802,6 +828,17 @@ https://github.com/ory/kratos/pull/3480
   /admin/identities?ids=id1&ids=id2&ids=id3
   ```
 
+- **changelog:** Add support for native recovery
+  ([#3624](https://github.com/ory/kratos/issues/3624))
+  ([492808c](https://github.com/ory/kratos/commit/492808cae0e804793aef9a02a902fce988f9fc6d)):
+
+  Adds the ability to complete the recovery flow properly on API flows. This PR
+  also streamlines the behavior for SPA flows to not return 422 errors anymore.
+  To enable this new behavior, set the features.use_continue_with_transitions
+  flag in the config to `true`.
+
+  See also https://github.com/ory/kratos/pull/3273
+
 - Emit error details when we find stray cookies in an API flow
   ([#3496](https://github.com/ory/kratos/issues/3496))
   ([df74339](https://github.com/ory/kratos/commit/df74339802d98a292abb32806eca35fb2554960b))
@@ -815,6 +852,9 @@ https://github.com/ory/kratos/pull/3480
   This feature depends on Cockroach functionality and configuration, and is not
   possible for MySQL or PostgreSQL.
 
+- Extract identifier label for login from default identity schema
+  ([#3645](https://github.com/ory/kratos/issues/3645))
+  ([180828e](https://github.com/ory/kratos/commit/180828eb507ab239a9c6589f747a6816b6e50074))
 - Fine-grained hooks for all available flow methods
   ([#3519](https://github.com/ory/kratos/issues/3519))
   ([a37f6bd](https://github.com/ory/kratos/commit/a37f6bddc48443b2fc464699fa5c2922f64d81f6)):
